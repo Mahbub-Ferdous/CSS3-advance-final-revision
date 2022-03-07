@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Css - specificity</title>
+    <style>
+        #power {
+            background-color: blueviolet;
+        }
+
+        /* we can see now that backgrouund color will be turn blueviolet because once a 'id' always more powerfull than normal 'class' whatever it was situated in */
+        
+        .heading {
+            color: blue;
+        }
+
+        /* now the color will be turn blue cause once a 'class' style is more powerfull than direct tag style whatever that styles have up or down */
+        
+        h1 {
+            color: blue;
+        }
+
+        h1 {
+            color: orangered !important;
+            /* now if youo use in stylesheet !important than it will be alwqays applicable like now all the headin
+            g color will be turn red */
+        }
+
+        h1 {
+            color: yellow;
+        }
+
+        /* cascading means water drop theory that is when a same style repeat below the style the new style was applicable  */
+        .heading {
+            background-color: yellow;
+        }
+
+        .heading {
+            background-color: aqua;
+        }
+
+        /* that means 'class' style is same water drop methodology  */
+    </style>
+</head>
+
+<body>
+    <h1 id="power" class="heading">My Heading - 2</h1>
+    <h1 id="power" class="heading">My Heading - 1</h1>
+    <h1 id="power" class="heading" style="background-color: black;">My Heading - 3</h1>
+    
+    <!-- that means my heading - 3 backgroound color will be black cause inline style is more powerfull than other  -->
+
+    <h1 id="power" class="heading">My Heading - 4</h1>
+</body>
+
+</html>

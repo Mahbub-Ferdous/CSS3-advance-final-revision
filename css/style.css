@@ -1,0 +1,12 @@
+h1 {
+    background-color: lightgray;
+}
+.heading{
+    background-color: bisque;
+}
+#power {
+    background-color: brown;
+}
+/* now the brown color is applicable cause there have 'id' that is more powerfull than  class and tag styles*/
+
+/* if we connect external css that will be execute early cause line wise thats the logic  */

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS - var(), calc()</title>
+    <style>
+        :root {
+            --main-color: aqua;
+            --dark-border: 2px solid black;
+            --red-color: red;
+            --margin: 20px;
+            --common-width: 200px;
+        }
+
+        /* the structure of declared a custom css property given below:
+        
+        :root {
+            --Custom-property: value;
+        }
+        */
+
+        /* we can use custom comon css in our css file call "var()" function like given below:
+        
+        .className {
+            css-property: var(--custom-propety)
+        }
+
+        */
+
+        /* when we build a big frontend web than we have big css file, when we design the page ours have some similar requirement like color tone, white-space gap, container border , margin, padding etc. than we can build some custom css property which was called css variable, if we declare some custom css property than we can use it simply call "var()" function */
+
+        h1 {
+            color: var(--main-color);
+        }
+
+        p {
+            color: var(--main-color);
+            margin: var(--margin);
+            clear: both;
+            /* clear property main reason when we done section tag float: left; than it will be effected in this reason we declared clear: both; means it will be clear in both side  */
+        }
+
+        h2 {
+            border: var(--dark-border);
+            color: orangered;
+        }
+
+        .side-nav,
+        .blogs {
+            float: left;
+            height: 500px;
+        }
+
+        .side-nav {
+            background-color: springgreen;
+            width: var(--common-width);
+        }
+
+        .blogs {
+            background-color: tomato;
+            width: calc(100% - var(--common-width));
+
+            /* calc() function means result will be come with calculation and now we done it by using flexbox and flex-flow but in past we used it */
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>This is my beautifull Header</h1>
+        <p>Oh My lovely header paragraph</p>
+    </header>
+    <main>
+        <h2>Thats my web body</h2>
+        <section>
+            <aside class="side-nav">side nav bar</aside>
+            <article class="blogs">blog</article>
+        </section>
+    </main>
+    <footer>
+        <p><small>Copyright</small></p>
+    </footer>
+</body>
+
+</html>
